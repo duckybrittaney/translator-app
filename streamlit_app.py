@@ -2,7 +2,6 @@ import streamlit as st
 import json
 from openai import OpenAI
 
-
 api_key = st.secrets["api"]["key"]
 client = OpenAI(api_key=api_key)
 system_prompt = '''
