@@ -3,7 +3,7 @@ import streamlit as st
 import json
 from openai import OpenAI
 
-openai.api_key = st.secrets["OPENAI_API_KEY"]
+openai.api_key = st.secrets["key"]
 system_prompt = '''
 You are a language translator. A user will give you an input language, an output language, and the text they want translated. Output ONLY their translated message.
 '''
