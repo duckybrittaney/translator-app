@@ -3,15 +3,16 @@ import streamlit as st
 import json
 from openai import OpenAI
 
-openai.api_key = st.secrets["key"]
+client = openai.OpenAI(api_key=st.secrets["openai"]["key"])
 system_prompt = '''
 You are a language translator. A user will give you an input language, an output language, and the text they want translated. Output ONLY their translated message.
 '''
 
 def chat(inp,outp,txt):
     user_prompt = f'{inp} -> {outp}, my message is: {txt}'
-    response = client.chat.completions.create(model = 'gpt-3.5-turbo-0125',
-    messages = [
+    response = client.chat.completions.create(
+        model = 'gpt-3.5-turbo-0125',
+        messages = [
         {'role': 'system', 'content': system_prompt},
         {'role': 'user', 'content': user_prompt},
     ])
