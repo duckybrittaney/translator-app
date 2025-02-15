@@ -10,7 +10,7 @@ except KeyError:
     st.stop()  # Stops the app if the API key isn't available
 
 # Streamlit App Title
-st.title("Translator 9000 🌍")
+st.title("Translator Mine 🌍")
 
 # Language Selection
 input_language = st.selectbox("Select Input Language:", ["Spanish", "English"])
